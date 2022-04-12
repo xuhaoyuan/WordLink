@@ -1,0 +1,38 @@
+source 'https://cdn.cocoapods.org/' # CDN加速
+platform :ios, '10.0'
+use_frameworks!
+inhibit_all_warnings!
+
+target 'WordSearch' do
+
+  pod 'RxSwift'
+  pod 'RxCocoa'
+  pod 'SnapKit'
+  pod 'Proposer'
+  pod 'Disk'
+  pod 'DeviceKit'
+  pod 'Randient'
+
+  pod 'RxKeyboard'
+  pod 'UITextView+Placeholder'
+  pod 'JXPhotoBrowser'
+  pod 'ZLPhotoBrowser', '4.1.7'
+  pod 'SwiftEntryKit'
+
+end
+
+
+post_install do |installer|
+  # 提高 pod 库编译速度
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '11'
+#      config.build_settings['SWIFT_COMPILATION_MODE'] = 'wholemodule'
+#      if config.name == 'Debug'
+#        config.build_settings['SWIFT_OPTIMIZATION_LEVEL'] = '-Onone'
+#      else
+#        config.build_settings['SWIFT_OPTIMIZATION_LEVEL'] = '-O'
+#      end
+    end
+  end
+end
