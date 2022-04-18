@@ -8,11 +8,9 @@ target 'WordSearch' do
   pod 'RxSwift'
   pod 'RxCocoa'
   pod 'SnapKit'
-  pod 'Proposer'
   pod 'Disk'
   pod 'DeviceKit'
   pod 'Randient'
-
   pod 'RxKeyboard'
   pod 'UITextView+Placeholder'
   pod 'JXPhotoBrowser'
